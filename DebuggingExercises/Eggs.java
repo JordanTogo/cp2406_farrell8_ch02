@@ -5,7 +5,7 @@ public class Eggs {
     public static void main(String[] args) {
         final float DOZENPRICE = 3.25f;
         final float SINGLEPRICE = .45f;
-        final int DOZENEGG = 12;
+        final int DOZENEGGS = 12;
         int eggs;
         int dozen;
         int remainder;
@@ -14,12 +14,12 @@ public class Eggs {
         Scanner inputDevice = new Scanner(System.in);
         System.out.println("Enter number of eggs>>> ");
         eggs = inputDevice.nextInt();
-        dozen = eggs / DOZENEGG;
-        remainder = eggs % DOZENEGG;
+        dozen = eggs / DOZENEGGS;
+        remainder = eggs % DOZENEGGS;
         total = dozen * DOZENPRICE + remainder * SINGLEPRICE;
-        System.out.println("You ordered " + eggs + " eggs. That's " + dozen +
-                " dozen at $ " + DOZENPRICE + " per dozen and " + remainder +
-                " loose eggs at " + (int)(SINGLEPRICE * 100) +
-                " cents each for a total of $" + total);
+        System.out.printf("You ordered %s eggs.\nThat's %s dozen at $%s" +
+                " per dozen\n" + "and %s loose eggs at "+
+                (int)(SINGLEPRICE * 100) + " cents each\n" +
+                "for a total of $%s", eggs, dozen, DOZENPRICE, remainder, total);
     }
 }
